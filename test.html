@@ -13,9 +13,9 @@ body { margin: 0; padding: 0; }
 #marker {
     background-image: url('rename.png'); /* Replace with the actual URL to your logo */
     background-size: cover;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
     cursor: pointer;
 }
 
@@ -29,15 +29,15 @@ body { margin: 0; padding: 0; }
 
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoibW9oaWJhaG1lZDIwMDEiLCJhIjoiY20wNDFrdHR2MDNseTJrb2Riam1hemxsaiJ9.ecbNWmA-HxUL7aJmM_4ekA';
-const queensCollege = [-73.8207, 40.7408]; // Coordinates for Queens College
+const queensCollege = [-73.8205,40.7368]; // Coordinates for Queens College
 
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11', // Map style
     center: queensCollege,
-    zoom: 15,
-    pitch: 60, // Tilt the map to create a 3D perspective
-    bearing: -17.6, // Rotate the map for better viewing angle
+    zoom: 15.9,
+    pitch: 0, // Set pitch to 0 for a bird's-eye view
+    bearing: 0, // Set bearing to 0 for a north-aligned map
     antialias: true // Improve rendering quality
 });
 
@@ -47,7 +47,27 @@ map.on('load', () => {
         'type': 'raster-dem',
         'url': 'mapbox://mapbox.terrain-rgb' // Source for elevation data
     });
-    map.setTerrain({ 'source': 'mapbox-dem', ' exaggeration': 1.5 });
+    map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+
+    // Add 3D buildings layer
+    map.addLayer({
+        'id': 'building-layer',
+        'source': 'mapbox-dem',
+        'type': 'fill-extrusion',
+        'minzoom': 15,
+        'paint': {
+            'fill-extrusion-color': '#aaa',
+            'fill-extrusion-height': [
+                'interpolate',
+                ['linear'],
+                ['zoom'],
+                15, 0,
+                15.05, 1
+            ],
+            'fill-extrusion-base': 0,
+            'fill-extrusion-opacity': 0.6
+        }
+    });
 
     // Create the popup
     const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
@@ -59,10 +79,10 @@ map.on('load', () => {
     // Create DOM element for the marker
     const el = document.createElement('div');
     el.id = 'marker';
-
+    const scienceBuilding = [-73.8201, 40.73509]; 
     // Create the marker
     new mapboxgl.Marker(el)
-        .setLngLat(queensCollege)
+        .setLngLat(scienceBuilding)
         .setPopup(popup) // Sets a popup on this marker
         .addTo(map);
 });
