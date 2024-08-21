@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3D Map with Popup</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+#marker {
+    background-image: url('rename.png'); /* Replace with the actual URL to your logo */
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+</style>
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibW9oaWJhaG1lZDIwMDEiLCJhIjoiY20wNDFrdHR2MDNseTJrb2Riam1hemxsaiJ9.ecbNWmA-HxUL7aJmM_4ekA';
+const queensCollege = [-73.8207, 40.7408]; // Coordinates for Queens College
+
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11', // Map style
+    center: queensCollege,
+    zoom: 15,
+    pitch: 60, // Tilt the map to create a 3D perspective
+    bearing: -17.6, // Rotate the map for better viewing angle
+    antialias: true // Improve rendering quality
+});
+
+map.on('load', () => {
+    // Enable 3D terrain
+    map.addSource('mapbox-dem', {
+        'type': 'raster-dem',
+        'url': 'mapbox://mapbox.terrain-rgb' // Source for elevation data
+    });
+    map.setTerrain({ 'source': 'mapbox-dem', ' exaggeration': 1.5 });
+
+    // Create the popup
+    const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
+        <h3>Queens College</h3>
+        <p>Queens College is a public college in the City University of New York (CUNY) system.</p>
+        <p><a href="http://www.qc.cuny.edu" target="_blank">Visit Queens College</a></p>
+    `);
+
+    // Create DOM element for the marker
+    const el = document.createElement('div');
+    el.id = 'marker';
+
+    // Create the marker
+    new mapboxgl.Marker(el)
+        .setLngLat(queensCollege)
+        .setPopup(popup) // Sets a popup on this marker
+        .addTo(map);
+});
+</script>
+
+</body>
+</html>
