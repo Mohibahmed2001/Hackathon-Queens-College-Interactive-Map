@@ -20,7 +20,35 @@ body { margin: 0; padding: 0; }
 }
 
 .mapboxgl-popup {
-    max-width: 200px;
+    max-width: 250px; /* Adjust width as needed */
+    padding: 10px;
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+.mapboxgl-popup h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Darker text color */
+}
+
+.mapboxgl-popup p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666; /* Lighter text color */
+}
+
+.mapboxgl-popup a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mapboxgl-popup a:hover {
+    text-decoration: underline;
 }
 </style>
 </head>
@@ -71,8 +99,8 @@ map.on('load', () => {
 
     // Create the popup
     const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
-        <h3>Queens College</h3>
-        <p>Queens College is a public college in the City University of New York (CUNY) system.</p>
+        <h3>Science Building</h3>
+        <p>This is the science building.</p>
         <p><a href="http://www.qc.cuny.edu" target="_blank">Visit Queens College</a></p>
     `);
 
