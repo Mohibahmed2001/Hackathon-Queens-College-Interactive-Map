@@ -1,0 +1,145 @@
+#scienceBuildingMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/ScienceBuilding.png');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#powderMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/powdermaker.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+}
+
+#libraryMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/Library.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+    
+}
+
+#kielyMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/KielyHall.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#jeffersonMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/JeffersonHall.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#klapperMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/Klapper.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#gymMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/Gym.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#freseMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/Frese.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#remsenMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/RemsenHall.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#diningMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/DiningHall.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#musicMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/Music.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#jeffersonMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/Library.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#iMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/iBuilding.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#honorsMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/HonorsCollege.png');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#unionMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/StudentUnion.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#kingsHallMarker {
+    width: 50px;
+    height: 50px;
+    background-image: url('./Static/kingsHall.jpg');
+    background-size: cover;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
