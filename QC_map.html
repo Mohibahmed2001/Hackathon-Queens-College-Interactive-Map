@@ -1,260 +1,254 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>3D Map with Popup</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-
-<link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
-
-<link rel="stylesheet" href = iconStyles.css>
-
-<style>
-
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-
+    <head>
+        <meta charset="utf-8">
+        <title>Interactive Maps</title>
+
+        <!--Part of MapBox GL JS-->
+        <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+        <!------------------------>
+
+        <link rel="stylesheet" href = iconStyles.css>
+
+    </head>
+    <body>
+        <div id="map"></div>
+
+        <!--Copied from MapBox GL JS, creation of map, adjusted for QC -->
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoibW9oaWJhaG1lZDIwMDEiLCJhIjoiY20wNDFrdHR2MDNseTJrb2Riam1hemxsaiJ9.ecbNWmA-HxUL7aJmM_4ekA';
+            const queensCollegeCords = [-73.8205,40.7368]; // Coordinates for Queens College
+
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11', // Map style
+            center: queensCollegeCords,
+            zoom: 15.9,
+            pitch: 0, // Set pitch to 0 for a bird's-eye view
+            bearing: 0, // Set bearing to 0 for a north-aligned map
+            antialias: true // Improve rendering quality
+        });
+        //---------------------------------------------->
+
+        map.on('load', () => {
+            
+            //---creating popup and adding html elements
+            const popupScienceBuidling = new mapboxgl.Popup({ offset: 25 }).setHTML(`
+                <h2>Science Building</h2>
+                <a href="https://www.qc.cuny.edu/academics/hpas/" target="_blank">Health Professions Advisory Services</a><br>
+                Room Number: B338
+                Email: <a href="mailto:qc.health.professions@qc.cuny.edu">qc.health.professions@qc.cuny.edu</a><br>
+                Phone: 718-997-3470<br>
+            `);
+
+            // Create DOM element for the marker
+            const markerElement1 = document.createElement('scienceBuildingMarker');
+            // create CSS tag
+            markerElement1.id = 'scienceBuildingMarker'; 
+            // marker cords
+            const ScienceBuidlingCords = [-73.8201, 40.73509]; 
+
+            // create marker and add it to the map
+            new mapboxgl.Marker(markerElement1).setLngLat(ScienceBuidlingCords).setPopup(popupScienceBuidling).addTo(map);
+            
+            //-----
+            const popupPowderMaker = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3>Powdermaker Hall</h3>
+                <p> Who is Powder maker?</p>
+                <p> better yet, who cares!? </p>
+            `);
+
+            const markerElement2 = document.createElement('div');
+            markerElement2.id = 'powderMarker';
+            const powderMakerCords = [-73.818986 , 40.736369];
+
+            new mapboxgl.Marker(markerElement2).setLngLat(powderMakerCords).setPopup(popupPowderMaker).addTo(map);
+
+            //------
+
+            const popupLibrary = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3>Rosenthal Library</h3>
+                <p> No one actually studies on the first floor?</p>
+                <p>  </p>
+            `);
+
+            const markerElement3 = document.createElement('div');
+            markerElement3.id = 'libraryMarker';
+            const LibraryCords = [-73.819912 , 40.7364858];
+
+            new mapboxgl.Marker(markerElement3).setLngLat(LibraryCords).setPopup(popupLibrary).addTo(map);
+
+            //-----
+
+            const popupKiely = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3>Kiely Hall</h3>
+                <p> where dreams go to die</p>
+                <p> please demo this buidling </p>
+            `);
+
+            const markerElement4 = document.createElement('div');
+            markerElement4.id = 'kielyMarker';
+            const KielyCords = [-73.816112 , 40.736142];
+
+            new mapboxgl.Marker(markerElement4).setLngLat(KielyCords).setPopup(popupKiely).addTo(map);
+
+            //-----
+
+            const popupJefferson = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3>Jefferson Hall</h3>
+                <p> No one actually studies on the first floor?</p>
+                <p>  </p>
+            `);
+
+            const markerElement5 = document.createElement('div');
+            markerElement5.id = 'jeffersonMarker';
+            const jeffersonCords = [-73.816144 , 40.735183];
 
+            new mapboxgl.Marker(markerElement5).setLngLat(jeffersonCords).setPopup(popupJefferson).addTo(map);
 
-</style>
-
-</head>
-<body>
-<div id="map"></div>
-
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoibW9oaWJhaG1lZDIwMDEiLCJhIjoiY20wNDFrdHR2MDNseTJrb2Riam1hemxsaiJ9.ecbNWmA-HxUL7aJmM_4ekA';
-const queensCollege = [-73.8205,40.7368]; // Coordinates for Queens College
-
-const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11', // Map style
-    center: queensCollege,
-    zoom: 15.9,
-    pitch: 0, // Set pitch to 0 for a bird's-eye view
-    bearing: 0, // Set bearing to 0 for a north-aligned map
-    antialias: true // Improve rendering quality
-});
+            //-----
 
-map.on('load', () => {
-    
-    //---
-    const popupScienceBuidling = new mapboxgl.Popup({ offset: 25 }).setHTML(`
-        <h2>Science Building</h2>
-        <a href="https://www.qc.cuny.edu/academics/hpas/" target="_blank">Health Professions Advisory Services</a><br>
-        Room Number: B338
-        Email: <a href="mailto:qc.health.professions@qc.cuny.edu">qc.health.professions@qc.cuny.edu</a><br>
-        Phone: 718-997-3470<br>
-    </div>
-       
-    `);
+            const popupKlapper = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3>Klap Hall</h3>
+                <p> No one actually studies on the first floor?</p>
+                <p>  </p>
+            `);
 
-    // Create DOM element for the marker
-    const markerElement1 = document.createElement('div');
-    markerElement1.id = 'scienceBuildingMarker'; //element for css later
-    const ScienceBuidlingCords = [-73.8201, 40.73509]; 
+            const markerElement6 = document.createElement('div');
+            markerElement6.id = 'klapperMarker';
+            const klapperCords = [-73.817264 , 40.736198];
 
-    // Create the marker
-    new mapboxgl.Marker(markerElement1).setLngLat(ScienceBuidlingCords).setPopup(popupScienceBuidling).addTo(map);
-    
-    //-----
-    const popupPowderMaker = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3>Powdermaker Hall</h3>
-        <p> Who is Powder maker?</p>
-        <p> better yet, who cares!? </p>
-    `);
+            new mapboxgl.Marker(markerElement6).setLngLat(klapperCords).setPopup(popupKlapper).addTo(map);
 
-    const markerElement2 = document.createElement('div');
-    markerElement2.id = 'powderMarker';
-    const powderMakerCords = [-73.818986 , 40.736369];
+            //-----
 
-    new mapboxgl.Marker(markerElement2).setLngLat(powderMakerCords).setPopup(popupPowderMaker).addTo(map);
+            const popupGym = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3>Gym</h3>
+                <p> No one actually studies on the first floor?</p>
+                <p>  </p>
+            `);
 
-    //------
+            const markerElement7 = document.createElement('div');
+            markerElement7.id = 'gymMarker';
+            const gymCords = [-73.819532 , 40.738082];
 
-    const popupLibrary = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3>Rosenthal Library</h3>
-        <p> No one actually studies on the first floor?</p>
-        <p>  </p>
-    `);
+            new mapboxgl.Marker(markerElement7).setLngLat(gymCords).setPopup(popupGym).addTo(map);
 
-    const markerElement3 = document.createElement('div');
-    markerElement3.id = 'libraryMarker';
-    const LibraryCords = [-73.819912 , 40.7364858];
+            //----- Programmer bias building
 
-    new mapboxgl.Marker(markerElement3).setLngLat(LibraryCords).setPopup(popupLibrary).addTo(map);
+            const popupFrese = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3> Where Syed works</h3>
+                <p> No one actually studies on the first floor?</p>
+                <p>  </p>
+            `);
 
-    //-----
+            const markerElement8 = document.createElement('div');
+            markerElement8.id = 'freseMarker';
+            const freseCords= [-73.817391 , 40.735687];
 
-    const popupKiely = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3>Kiely Hall</h3>
-        <p> where dreams go to die</p>
-        <p> please demo this buidling </p>
-    `);
+            new mapboxgl.Marker(markerElement8).setLngLat(freseCords).setPopup(popupFrese).addTo(map);
 
-    const markerElement4 = document.createElement('div');
-    markerElement4.id = 'kielyMarker';
-    const KielyCords = [-73.816112 , 40.736142];
+            //----
 
-    new mapboxgl.Marker(markerElement4).setLngLat(KielyCords).setPopup(popupKiely).addTo(map);
+            const popupRemsen = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3> Remsen Hall</h3>
+                <p> No one actually studies on the first floor?</p>
+                <p> f them kids </p>
+            `);
 
-    //-----
+            const markerElement9 = document.createElement('div');
+            markerElement9.id = 'remsenMarker';
+            const remsenCords = [-73.819079 , 40.734953];
 
-    const popupJefferson = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3>Jefferson Hall</h3>
-        <p> No one actually studies on the first floor?</p>
-        <p>  </p>
-    `);
+            new mapboxgl.Marker(markerElement9).setLngLat(remsenCords).setPopup(popupRemsen).addTo(map);
 
-    const markerElement5 = document.createElement('div');
-    markerElement5.id = 'jeffersonMarker';
-    const jeffersonCords = [-73.816144 , 40.735183];
+            //-----
 
-    new mapboxgl.Marker(markerElement5).setLngLat(jeffersonCords).setPopup(popupJefferson).addTo(map);
+            const popupDiningHall = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3> Dining Hall </h3>
+                <p> No one actually studies on the first floor?</p>
+                <p> f them kids </p>
+            `);
 
-    //-----
+            const markerElement10 = document.createElement('div');
+            markerElement10.id = 'diningMarker';
+            const diningHallCords = [-73.817442 , 40.737225];
 
-    const popupKlapper = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3>Klap Hall</h3>
-        <p> No one actually studies on the first floor?</p>
-        <p>  </p>
-    `);
+            new mapboxgl.Marker(markerElement10).setLngLat(diningHallCords).setPopup(popupDiningHall).addTo(map);
 
-    const markerElement6 = document.createElement('div');
-    markerElement6.id = 'klapperMarker';
-    const klapperCords = [-73.817264 , 40.736198];
+            //-----
 
-    new mapboxgl.Marker(markerElement6).setLngLat(klapperCords).setPopup(popupKlapper).addTo(map);
+            const popupMusic = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3> Aaron Copland School of Music</h3>
+                <p> No one actually studies on the first floor?</p>
+                <p> f them kids </p>
+            `);
 
-    //-----
+            const markerElement11 = document.createElement('div');
+            markerElement11.id = 'musicMarker';
+            const musicBuildingCords = [-73.817237 , 40.738017];
 
-    const popupGym = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3>Gym</h3>
-        <p> No one actually studies on the first floor?</p>
-        <p>  </p>
-    `);
+            new mapboxgl.Marker(markerElement11).setLngLat(musicBuildingCords).setPopup(popupMusic).addTo(map);
 
-    const markerElement7 = document.createElement('div');
-    markerElement7.id = 'gymMarker';
-    const gymCords = [-73.819532 , 40.738082];
+            //-----
 
-    new mapboxgl.Marker(markerElement7).setLngLat(gymCords).setPopup(popupGym).addTo(map);
+            const popupI = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3> I building </h3>
+                <p> No one actually studies on the first floor?</p>
+                <p> f them kids </p>
+            `);
 
-    //----- Programmer bias building
+            const markerElement12 = document.createElement('div');
+            markerElement12.id = 'iMarker';
+            const iCords = [-73.818643 , 40.737250];
 
-    const popupFrese = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3> Where Syed works</h3>
-        <p> No one actually studies on the first floor?</p>
-        <p>  </p>
-    `);
+            new mapboxgl.Marker(markerElement12).setLngLat(iCords).setPopup(popupI).addTo(map);
 
-    const markerElement8 = document.createElement('div');
-    markerElement8.id = 'freseMarker';
-    const freseCords= [-73.817391 , 40.735687];
+            //-----
 
-    new mapboxgl.Marker(markerElement8).setLngLat(freseCords).setPopup(popupFrese).addTo(map);
+            const popupHonors = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3> Honors Hall </h3>
+                <p> No one actually studies on the first floor?</p>
+                <p> f them kids </p>
+            `);
 
-    //----
+            const markerElement13 = document.createElement('div');
+            markerElement13.id = 'honorsMarker';
+            const honorsCords = [-73.818508 , 40.734600];
 
-    const popupRemsen = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3> Remsen Hall</h3>
-        <p> No one actually studies on the first floor?</p>
-        <p> f them kids </p>
-    `);
+            new mapboxgl.Marker(markerElement13).setLngLat(honorsCords).setPopup(popupHonors).addTo(map);
 
-    const markerElement9 = document.createElement('div');
-    markerElement9.id = 'remsenMarker';
-    const remsenCords = [-73.819079 , 40.734953];
+            //-----
+            
+            const popupUnion = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3> Student Union </h3>
+                <p> No one actually studies on the first floor?</p>
+                <p> f them kids </p>
+            `);
 
-    new mapboxgl.Marker(markerElement9).setLngLat(remsenCords).setPopup(popupRemsen).addTo(map);
+            const markerElement14 = document.createElement('div');
+            markerElement14.id = 'unionMarker';
+            const unionCords = [-73.816057, 40.734220];
 
-    //-----
+            new mapboxgl.Marker(markerElement14).setLngLat(unionCords).setPopup(popupUnion).addTo(map);
 
-    const popupDiningHall = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3> Dining Hall </h3>
-        <p> No one actually studies on the first floor?</p>
-        <p> f them kids </p>
-    `);
+            //-----
 
-    const markerElement10 = document.createElement('div');
-    markerElement10.id = 'diningMarker';
-    const diningHallCords = [-73.817442 , 40.737225];
+            const popupKingsHall = new mapboxgl.Popup({ offset: 25}).setHTML(`
+                <h3> Student Union </h3>
+                <p> No one actually studies on the first floor?</p>
+                <p> f them kids </p>
+            `);
 
-    new mapboxgl.Marker(markerElement10).setLngLat(diningHallCords).setPopup(popupDiningHall).addTo(map);
+            const markerElement15 = document.createElement('div');
+            markerElement15.id = 'kingsHallMarker';
+            const kingHallCords = [-73.815357, 40.737059];
 
-    //-----
+            new mapboxgl.Marker(markerElement15).setLngLat(kingHallCords).setPopup(popupKingsHall).addTo(map);
 
-    const popupMusic = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3> Aaron Copland School of Music</h3>
-        <p> No one actually studies on the first floor?</p>
-        <p> f them kids </p>
-    `);
+        });
+        </script>
 
-    const markerElement11 = document.createElement('div');
-    markerElement11.id = 'musicMarker';
-    const musicBuildingCords = [-73.817237 , 40.738017];
-
-    new mapboxgl.Marker(markerElement11).setLngLat(musicBuildingCords).setPopup(popupMusic).addTo(map);
-
-    //-----
-
-    const popupI = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3> I building </h3>
-        <p> No one actually studies on the first floor?</p>
-        <p> f them kids </p>
-    `);
-
-    const markerElement12 = document.createElement('div');
-    markerElement12.id = 'iMarker';
-    const iCords = [-73.818643 , 40.737250];
-
-    new mapboxgl.Marker(markerElement12).setLngLat(iCords).setPopup(popupI).addTo(map);
-
-    //-----
-
-    const popupHonors = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3> Honors Hall </h3>
-        <p> No one actually studies on the first floor?</p>
-        <p> f them kids </p>
-    `);
-
-    const markerElement13 = document.createElement('div');
-    markerElement13.id = 'honorsMarker';
-    const honorsCords = [-73.818508 , 40.734600];
-
-    new mapboxgl.Marker(markerElement13).setLngLat(honorsCords).setPopup(popupHonors).addTo(map);
-
-    //-----
-    
-    const popupUnion = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3> Student Union </h3>
-        <p> No one actually studies on the first floor?</p>
-        <p> f them kids </p>
-    `);
-
-    const markerElement14 = document.createElement('div');
-    markerElement14.id = 'unionMarker';
-    const unionCords = [-73.816057, 40.734220];
-
-    new mapboxgl.Marker(markerElement14).setLngLat(unionCords).setPopup(popupUnion).addTo(map);
-
-    //-----
-
-    const popupKingsHall = new mapboxgl.Popup({ offset: 25}).setHTML(`
-        <h3> Student Union </h3>
-        <p> No one actually studies on the first floor?</p>
-        <p> f them kids </p>
-    `);
-
-    const markerElement15 = document.createElement('div');
-    markerElement15.id = 'kingsHallMarker';
-    const kingHallCords = [-73.815357, 40.737059];
-
-    new mapboxgl.Marker(markerElement15).setLngLat(kingHallCords).setPopup(popupKingsHall).addTo(map);
-
-});
-</script>
-
-</body>
+    </body>
 </html>
