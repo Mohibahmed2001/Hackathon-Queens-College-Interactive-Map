@@ -35,11 +35,55 @@
             
             //---creating popup and adding html elements
             const popupScienceBuidling = new mapboxgl.Popup({ offset: 25 }).setHTML(`
-                <h2>Science Building</h2>
+                <h1>Science Building </h1>
+                
+                <h3>Biology Department</h3>
+                <a href="https://www.qc.cuny.edu/academics/bio/" target="_blank">Biology Department</a><br>
+                Room Number: 346<br>
+                Email: <a href="mailto:biology@qc.cuny.edu">biology@qc.cuny.edu</a><br>
+                Phone: (718) 997-3400<br>
+
+                <h3>Computer Science Department</h3>
+                <a href="https://www.cs.qc.cuny.edu/" target="_blank">Computer Science Department</a><br>
+                Room Number: A202<br>
+                Email: <a href="mailto:csoffice@qc.cuny.edu">csoffice@qc.cuny.edu</a><br>
+                Phone: 718-997-3566<br>
+
+                <h3>Health Professions Advisory Services</h3>
+                <a href="https://www.qc.cuny.edu/academics/hpas/" target="_blank">Health Professions Advisory Services</a><br>
+                Room Number: B338<br>
+                Email: <a href="mailto:qc.health.professions@qc.cuny.edu">qc.health.professions@qc.cuny.edu</a><br>
+                Phone: 718-997-3470<br>
+
+                <h3>Medical Career Prep</h3>
+                <a href="https://www.qc.cuny.edu/academics/mcp/" target="_blank">Medical Career Prep</a><br>
+                Room Number: D-332<br>
+                Email: <a href="mailto:mika.vesanen@qc.cuny.edu">mika.vesanen@qc.cuny.edu</a><br>
+                Phone: N/A<br>
+
+                <h3> Psychology Department</h3>
+                <a href="https://psychology.qc.cuny.edu" target="_blank">Psychology Department</a><br>
+                Room Number: E318<br>
+                Email: <a href="mailto:qc_psychology@qc.cuny.edu">qc_psychology@qc.cuny.edu</a><br>
+                Phone: N/A<br>
+
+                <h3>Physics Department</h3>
+                <a href="https://physics.qc.cuny.edu/" target="_blank">Physics Department</a><br>
+                Room Number: B334<br>
+                Email: <a href="mailto:info@physics.qc.cuny.edu">info@physics.qc.cuny.edu</a><br>
+                Phone: 718-997-3350<br>
+
+                <h3>School of Earth and Environmental Sciences</h3>
+                <a href="https://www.qc.cuny.edu/academics/sees/" target="_blank">School of Earth and Environmental Sciences</a><br>
+                Room Number: D216<br>
+                Email: <a href="mailto:sees@qc.cuny.edu">sees@qc.cuny.edu</a><br>
+                Phone: (718) 997-3300<br>
+                
+                <h3>School of Earth and Environmental Sciences</h3>
                 <a href="https://www.qc.cuny.edu/academics/hpas/" target="_blank">Health Professions Advisory Services</a><br>
                 Room Number: B338
                 Email: <a href="mailto:qc.health.professions@qc.cuny.edu">qc.health.professions@qc.cuny.edu</a><br>
-                Phone: 718-997-3470<br>
+                Phone: 718-997-3470
             `);
 
             // Create DOM element for the marker
@@ -54,9 +98,98 @@
             
             //-----
             const popupPowderMaker = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3>Powdermaker Hall</h3>
-                <p> Who is Powder maker?</p>
-                <p> better yet, who cares!? </p>
+                <h1>Powdermaker Hall</h1>
+                
+                <h3>Anthropology Department</h3>
+                <a href="https://www.qc.cuny.edu/academics/anthropology/" target="_blank">Anthropology Department</a><br>
+                Room Number: 314<br>
+                Email: <a href="mailto:LSwedell@qc.cuny.edu">LSwedell@qc.cuny.edu</a><br>
+                Phone: 718-997-5510<br>
+
+                <h3>Honors in the Social Sciences</h3>
+                <a href="https://www.qc.cuny.edu/academics/hss/" target="_blank">Honors in the Social Sciences</a><br>
+                Room Number: 352N<br>
+                Email: <a href="mailto:Thomas.Ort@qc.cuny.edu">Thomas.Ort@qc.cuny.edu</a><br>
+                Phone: 718-997-5363<br>
+
+                <h3>Center for the Improvement of Education</h3>
+                <a href="https://www.qc.cuny.edu/academics/cie/" target="_blank">Center for the Improvement of Education</a><br>
+                Room Number: 100<br>
+                Email: <a href="mailto:Paul.Longo@qc.cuny.edu">Paul.Longo@qc.cuny.edu</a><br>
+                Phone: (718) 997-5220<br>
+
+                <h3>Department of Educational & Community Programs</h3>
+                <a href="https://www.qc.cuny.edu/academics/ecp/" target="_blank">Department of Educational & Community Programs</a><br>
+                Room Number: 33<br>
+                Email: <a href="mailto:john.pellitteri@qc.cuny.edu">john.pellitteri@qc.cuny.edu</a><br>
+                Phone: 718-997-5250<br>
+
+                <h3>Elementary and Early Childhood Education</h3>
+                <a href="https://www.qc.cuny.edu/academics/eece/" target="_blank">Elementary and Early Childhood Education</a><br>
+                Room Number: 54<br>
+                Email: <a href="mailto:eece@qc.cuny.edu">eece@qc.cuny.edu</a><br>
+                Phone: 718-997-5302<br>
+
+                <h3>Secondary Education and Youth Services</h3>
+                <a href="https://www.qc.cuny.edu/academics/seys/" target="_blank">Secondary Education and Youth Services</a><br>
+                Room Number: 150<br>
+                Email: <a href="mailto:SEYS@qc.cuny.edu">SEYS@qc.cuny.edu</a><br>
+                Phone: 718-997-5150<br>
+
+                <h3>Department of Accounting</h3>
+                <a href="https://www.qc.cuny.edu/academics/ais/" target="_blank">Department of Accounting</a><br>
+                Room Number: 215<br>
+                Email: <a href="mailto:accounting@qc.cuny.edu">accounting@qc.cuny.edu</a><br>
+                Phone: 718-997-5070<br>
+
+                <h3>Department of Economics</h3>
+                <a href="https://www.qc.cuny.edu/academics/economics/" target="_blank">Department of Economics</a><br>
+                Room Number: 300<br>
+                Email: <a href="mailto:econdept@qc.cuny.edu">econdept@qc.cuny.edu</a><br>
+                Phone: (718) 997-5440<br>
+
+                <h3>Department of History</h3>
+                <a href="https://www.qc.cuny.edu/academics/history/" target="_blank">Department of History</a><br>
+                Room Number: 352<br>
+                Email: N/A<br>
+                Phone: (718) 997-5350<br>
+
+                <h3>Philosophy Department</h3>
+                <a href="https://www.qc.cuny.edu/academics/philosophy/" target="_blank">Philosophy Department</a><br>
+                Room Number: 350<br>
+                Email: <a href="mailto:Philosophy@qc.cuny.edu">Philosophy@qc.cuny.edu</a><br>
+                Phone: 718-997-5270<br>
+
+                <h3>Political Science Department</h3>
+                <a href="https://www.qc.cuny.edu/academics/ps/" target="_blank">Political Science Department</a><br>
+                Room Number: 200<br>
+                Email: <a href="mailto:mayra.tepi@qc.cuny.edu">mayra.tepi@qc.cuny.edu</a><br>
+                Phone: (718) 997-5470<br>
+
+                <h3>Department of Risk Management</h3>
+                <a href="https://www.qc.cuny.edu/academics/rm/" target="_blank">Department of Risk Management</a><br>
+                Room Number: 335<br>
+                Email: <a href="mailto:kecia.cruz@qc.cuny.edu">kecia.cruz@qc.cuny.edu</a><br>
+                Phone: (718) 997-5507<br>
+
+                <h3>Department of Sociology</h3>
+                <a href="https://www.qc.cuny.edu/academics/sociology/" target="_blank">Department of Sociology</a><br>
+                Room Number: 252<br>
+                Email: <a href="mailto:cunyqcsociology@gmail.com">cunyqcsociology@gmail.com</a><br>
+                Phone: 718-997-2800<br>
+
+                <h3>Urban Studies Department</h3>
+                <a href="https://www.qc.cuny.edu/academics/us/" target="_blank">Urban Studies Department</a><br>
+                Room Number: 250<br>
+                Email: <a href="mailto:melissa.checker@qc.cuny.edu">melissa.checker@qc.cuny.edu</a><br>
+                Phone: 718-997-5130<br>
+
+                <h3>Teaching Improvements through Mathematics Education</h3>
+                <a href="https://www.qc.cuny.edu/academics/ohs/time-2000/" target="_blank">Teaching Improvements through Mathematics Education</a><br>
+                Room Number: 2<br>
+                Email: <a href="mailto:QCTIME2000@qc.cuny.edu">QCTIME2000@qc.cuny.edu</a><br>
+                Phone: 718-997-5377<br>
+
             `);
 
             const markerElement2 = document.createElement('div');
@@ -68,9 +201,12 @@
             //------
 
             const popupLibrary = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3>Rosenthal Library</h3>
-                <p> No one actually studies on the first floor?</p>
-                <p>  </p>
+                <h1>Rosenthal Library</h1>
+                <h3>Graduate School of Library and Information Studies</h3>
+                <a href="https://www.qc.cuny.edu/academics/gslis/" target="_blank">Graduate School of Library and Information Studies</a><br>
+                Room Number: 254<br>
+                Email: <a href="mailto:qc_gslis@qc.cuny.edu">qc_gslis@qc.cuny.edu</a><br>
+                Phone: (718) 997-3790<br>
             `);
 
             const markerElement3 = document.createElement('div');
@@ -82,9 +218,79 @@
             //-----
 
             const popupKiely = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3>Kiely Hall</h3>
-                <p> where dreams go to die</p>
-                <p> please demo this buidling </p>
+                <h1>Kiely Hall</h1>
+                <h3>Academic Advising Center</h3>
+                <a href="https://www.qc.cuny.edu/aac/" target="_blank">Academic Advising Center</a><br>
+                Room Number: 217<br>
+                Email: <a href="mailto:advising@qc.cuny.edu">advising@qc.cuny.edu</a><br>
+                Phone: 718-997-5599<br>
+
+                <h3>QC Learning Commons</h3>
+                <a href="https://www.qc.cuny.edu/academics/qclc/" target="_blank">QC Learning Commons</a><br>
+                Room Number: 237<br>
+                Email: <a href="mailto:LCommons@qc.cuny.edu">LCommons@qc.cuny.edu</a><br>
+                Phone: N/A<br>
+
+                <h3>QC Writing Center</h3>
+                <a href="https://www.qc.cuny.edu/academics/wc/" target="_blank">QC Writing Center</a><br>
+                Room Number: 229<br>
+                Email: <a href="mailto:qc.writing.center@qc.cuny.edu">qc.writing.center@qc.cuny.edu</a><br>
+                Phone: 718-997-5676<br>
+
+                <h3>Transfer Advising Services</h3>
+                <a href="https://www.qc.cuny.edu/aac/transfer-advising/" target="_blank">Transfer Advising Services</a><br>
+                Room Number: 217<br>
+                Email: <a href="mailto:Catherine.Connolly@qc.cuny.edu">Catherine.Connolly@qc.cuny.edu</a><br>
+                Phone: 718-997-5459<br>
+
+                <h3>Office of Compliance and Diversity</h3>
+                <a href="https://www.qc.cuny.edu/ocd/" target="_blank">Office of Compliance and Diversity</a><br>
+                Room Number: 134<br>
+                Email: <a href="mailto:Complianceanddiversity@qc.cuny.edu">Complianceanddiversity@qc.cuny.edu</a><br>
+                Phone: 718-997-5888<br>
+
+                <h3>Office of External & Governmental Relations</h3>
+                <a href="https://www.qc.cuny.edu/oegr/" target="_blank">Office of External & Governmental Relations</a><br>
+                Room Number: 1310<br>
+                Email: <a href="mailto:jeffrey.rosenstock@qc.cuny.edu">jeffrey.rosenstock@qc.cuny.edu</a><br>
+                Phone: 718-997-4995<br>
+
+                <h3>Facilities Planning and Operations</h3>
+                <a href="https://www.qc.cuny.edu/fa/" target="_blank">Facilities Planning and Operations</a><br>
+                Room Number: 700<br>
+                Email: <a href="mailto:Celeste.Nieves@qc.cuny.edu">Celeste.Nieves@qc.cuny.edu</a><br>
+                Phone: (718) 997-2880<br>
+
+                <h3>Department of Sustainability Initiatives</h3>
+                <a href="https://www.qc.cuny.edu/sustainability/" target="_blank">Department of Sustainability Initiatives</a><br>
+                Room Number: 710<br>
+                Email: N/A<br>
+                Phone: 718-997-2880<br>
+
+                <h3>Office of the President</h3>
+                <a href="https://www.qc.cuny.edu/po/" target="_blank">Office of the President</a><br>
+                Room Number: 1200<br>
+                Email: <a href="mailto:president@qc.cuny.edu">president@qc.cuny.edu</a><br>
+                Phone: 718-997-5550<br>
+
+                <h3>Office of Budget and Finance</h3>
+                <a href="https://www.qc.cuny.edu/budget-and-finance/" target="_blank">Office of Budget and Finance</a><br>
+                Room Number: 1010<br>
+                Email: <a href="mailto:VPFA@qc.cuny.edu">VPFA@qc.cuny.edu</a><br>
+                Phone: 718-997-5557<br>
+
+                <h3>Office of Communications and Marketing</h3>
+                <a href="https://www.qc.cuny.edu/communications/" target="_blank">Office of Communications and Marketing</a><br>
+                Room Number: 803<br>
+                Email: <a href="mailto:lorena.li@qc.cuny.edu">lorena.li@qc.cuny.edu</a><br>
+                Phone: 718-997-5590<br>
+
+                <h3>Office of Special Services for Students with Disabilities</h3>
+                <a href="https://www.qc.cuny.edu/sp/" target="_blank">Office of Special Services for Students with Disabilities</a><br>
+                Room Number: 108<br>
+                Email: <a href="mailto:qc.spsv@qc.cuny.edu">qc.spsv@qc.cuny.edu</a><br>
+                Phone: 718-997-5870<br>
+
             `);
 
             const markerElement4 = document.createElement('div');
@@ -96,9 +302,13 @@
             //-----
 
             const popupJefferson = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3>Jefferson Hall</h3>
-                <p> No one actually studies on the first floor?</p>
-                <p>  </p>
+                <h1>Jefferson Hall</h1>
+                
+                <h3>Office of the Bursar</h3>
+                <a href="https://www.qc.cuny.edu/br/" target="_blank">Office of the Bursar</a><br>
+                Room Number: 200<br>
+                Email: <a href="mailto:QC.Burs.Communication@qc.cuny.edu">QC.Burs.Communication@qc.cuny.edu</a><br>
+                Phone: (718) 997-4561<br>>
             `);
 
             const markerElement5 = document.createElement('div');
@@ -110,9 +320,13 @@
             //-----
 
             const popupKlapper = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3>Klap Hall</h3>
-                <p> No one actually studies on the first floor?</p>
-                <p>  </p>
+                <h1>Klapper Hall</h1>
+                
+                <h3>Department of College Preparatory Programs</h3>
+                <a href="https://www.qc.cuny.edu/academics/cpp/" target="_blank">Department of College Preparatory Programs</a><br>
+                Room Number: 315<br>
+                Email: <a href="mailto:robin.hizme@qc.cuny.edu">robin.hizme@qc.cuny.edu</a><br>
+                Phone: 718-997-3175<br>
             `);
 
             const markerElement6 = document.createElement('div');
@@ -121,26 +335,36 @@
 
             new mapboxgl.Marker(markerElement6).setLngLat(klapperCords).setPopup(popupKlapper).addTo(map);
 
-            //-----
-
-            const popupGym = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3>Gym</h3>
-                <p> No one actually studies on the first floor?</p>
-                <p>  </p>
-            `);
-
-            const markerElement7 = document.createElement('div');
-            markerElement7.id = 'gymMarker';
-            const gymCords = [-73.819532 , 40.738082];
-
-            new mapboxgl.Marker(markerElement7).setLngLat(gymCords).setPopup(popupGym).addTo(map);
 
             //----- Programmer bias building
 
             const popupFrese = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3> Where Syed works</h3>
-                <p> No one actually studies on the first floor?</p>
-                <p>  </p>
+                <h1> Frese Hall </h1>
+                
+                <h3>Center for Career Engagement and Internships</h3>
+                <a href="https://www.qc.cuny.edu/academics/cei/" target="_blank">Center for Career Engagement and Internships</a><br>
+                Room Number: 213<br>
+                Email: <a href="mailto:qc_career@qc.cuny.edu">qc_career@qc.cuny.edu</a><br>
+                Phone: 718-997-4465<br>
+
+                <h3>Experiential Education</h3>
+                <a href="https://www.qc.cuny.edu/academics/ee/" target="_blank">Experiential Education</a><br>
+                Room Number: 102<br>
+                Email: <a href="mailto:experientialeducation@qc.cuny.edu">experientialeducation@qc.cuny.edu</a><br>
+                Phone: 718-570-0565<br>
+
+                <h3>Counseling Services Department</h3>
+                <a href="https://www.qc.cuny.edu/cs/" target="_blank">Counseling Services Department</a><br>
+                Room Number: 100<br>
+                Email: <a href="mailto:CounselingServices@qc.cuny.edu">CounselingServices@qc.cuny.edu</a><br>
+                Phone: 718-997-5420<br>
+
+                <h3>Office of Student Advocacy & Appeals</h3>
+                <a href="https://www.qc.cuny.edu/saa/" target="_blank">Office of Student Advocacy & Appeals</a><br>
+                Room Number: 201<br>
+                Email: <a href="mailto:student.advocacy@qc.cuny.edu">student.advocacy@qc.cuny.edu</a><br>
+                Phone: 718-997-4486<br>
+
             `);
 
             const markerElement8 = document.createElement('div');
@@ -152,9 +376,19 @@
             //----
 
             const popupRemsen = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3> Remsen Hall</h3>
-                <p> No one actually studies on the first floor?</p>
-                <p> f them kids </p>
+                <h1> Remsen Hall</h1>
+                
+                <h3>Chemistry and Biochemistry Department</h3>
+                <a href="https://www.qc.cuny.edu/academics/chem/" target="_blank">Chemistry and Biochemistry Department</a><br>
+                Room Number: 206<br>
+                Email: <a href="mailto:kelly.barth@qc.cuny.edu">kelly.barth@qc.cuny.edu</a><br>
+                Phone: 718-997-4100<br>
+
+                <h3>Honors in the Mathematical and Natural Sciences</h3>
+                <a href="https://www.qc.cuny.edu/academics/hmns/" target="_blank">Honors in the Mathematical and Natural Sciences</a><br>
+                Room Number: 026A<br>
+                Email: <a href="mailto:Uri.Samuni@qc.cuny.edu">Uri.Samuni@qc.cuny.edu</a><br>
+                Phone: 718-997-4223<br>
             `);
 
             const markerElement9 = document.createElement('div');
@@ -166,9 +400,13 @@
             //-----
 
             const popupDiningHall = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3> Dining Hall </h3>
-                <p> No one actually studies on the first floor?</p>
-                <p> f them kids </p>
+                <h1> Dining Hall </h1>
+                
+                <h3>Office of Financial Aid Services</h3>
+                <a href="https://www.qc.cuny.edu/faid/" target="_blank">Office of Financial Aid Services</a><br>
+                Room Number: 128<br>
+                Email: <a href="mailto:FinancialAid@qc.cuny.edu">FinancialAid@qc.cuny.edu</a><br>
+                Phone: 1-800-433-3243<br>
             `);
 
             const markerElement10 = document.createElement('div');
@@ -179,24 +417,15 @@
 
             //-----
 
-            const popupMusic = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3> Aaron Copland School of Music</h3>
-                <p> No one actually studies on the first floor?</p>
-                <p> f them kids </p>
-            `);
-
-            const markerElement11 = document.createElement('div');
-            markerElement11.id = 'musicMarker';
-            const musicBuildingCords = [-73.817237 , 40.738017];
-
-            new mapboxgl.Marker(markerElement11).setLngLat(musicBuildingCords).setPopup(popupMusic).addTo(map);
-
-            //-----
-
             const popupI = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3> I building </h3>
-                <p> No one actually studies on the first floor?</p>
-                <p> f them kids </p>
+                <h1> I building </h1>
+                
+                <h3>Information Technology Services</h3>
+                <a href="https://www.qc.cuny.edu/its/" target="_blank">Information Technology Services</a><br>
+                Room Number: 200<br>
+                Email: <a href="mailto:support@qc.cuny.edu">support@qc.cuny.edu</a><br>
+                Phone: (718) 997-4444<br>
+
             `);
 
             const markerElement12 = document.createElement('div');
@@ -209,8 +438,49 @@
 
             const popupHonors = new mapboxgl.Popup({ offset: 25}).setHTML(`
                 <h3> Honors Hall </h3>
-                <p> No one actually studies on the first floor?</p>
-                <p> f them kids </p>
+                
+                <h3>Macaulay Honors College</h3>
+                <a href="https://www.qc.cuny.edu/academics/ohs/" target="_blank">Macaulay Honors College</a><br>
+                Room Number: 19<br>
+                Email: <a href="mailto:macaulay@qc.cuny.edu">macaulay@qc.cuny.edu</a><br>
+                Phone: 718-997-5000<br>
+
+                <h3>Office of Honors and Scholarships</h3>
+                <a href="https://www.qc.cuny.edu/academics/ohs/" target="_blank">Office of Honors and Scholarships</a><br>
+                Room Number: 16<br>
+                Email: <a href="mailto:qc.scholarships@qc.cuny.edu">qc.scholarships@qc.cuny.edu</a><br>
+                Phone: 718-997-5502<br>
+
+                <h3>Transfer Honors</h3>
+                <a href="https://www.qc.cuny.edu/academics/ohs/honors-and-scholarships/transfer-honors-program/" target="_blank">Transfer Honors</a><br>
+                Room Number: 16<br>
+                Email: <a href="mailto:transferhonors@qc.cuny.edu">transferhonors@qc.cuny.edu</a><br>
+                Phone: 718-997-5519<br>
+
+                <h3>Kessler Presidential Scholarship Program</h3>
+                <a href="https://www.qc.cuny.edu/academics/kpsp/" target="_blank">Kessler Presidential Scholarship Program</a><br>
+                Room Number: 1<br>
+                Email: <a href="mailto:KesslerQC@qc.cuny.edu">KesslerQC@qc.cuny.edu</a><br>
+                Phone: N/A<br>
+
+                <h3>Honors Minor in Business and Liberal Arts (BALA)</h3>
+                <a href="https://www.qc.cuny.edu/academics/bala/" target="_blank">Honors Minor in Business and Liberal Arts (BALA)</a><br>
+                Room Number: 7<br>
+                Email: <a href="mailto:BALA.Department@qc.cuny.edu">BALA.Department@qc.cuny.edu</a><br>
+                Phone: 718-997-2860<br>
+
+                <h3>Honors in the Humanities Program</h3>
+                <a href="https://www.qc.cuny.edu/academics/hh/" target="_blank">Honors in the Humanities Program</a><br>
+                Room Number: 20B<br>
+                Email: <a href="mailto:Clare.Carroll@qc.cuny.edu">Clare.Carroll@qc.cuny.edu</a><br>
+                Phone: (718) 997-3180<br>
+
+                <h3>First Year Experience</h3>
+                <a href="https://www.qc.cuny.edu/fye/" target="_blank">First Year Experience</a><br>
+                Room Number: 5<br>
+                Email: <a href="mailto:fye@qc.cuny.edu">fye@qc.cuny.edu</a><br>
+                Phone: (718) 997-5567<br>
+
             `);
 
             const markerElement13 = document.createElement('div');
@@ -222,9 +492,26 @@
             //-----
             
             const popupUnion = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3> Student Union </h3>
-                <p> No one actually studies on the first floor?</p>
-                <p> f them kids </p>
+                <h1> Student Union </h1>
+                
+                <h3>Student Affairs & Enrollment Management</h3>
+                <a href="https://www.qc.cuny.edu/student-affairs-enrollment-management/" target="_blank">Student Affairs & Enrollment Management</a><br>
+                Room Number: 300<br>
+                Email: <a href="mailto:vpsa@qc.cuny.edu">vpsa@qc.cuny.edu</a><br>
+                Phone: 718-997-5501<br><br>
+                
+                <h3>Student Affairs</h3>
+                <a href="https://www.qc.cuny.edu/student-affairs-enrollment-management/sa/" target="_blank">Student Affairs</a><br>
+                Room Number: 327<br>
+                Email: <a href="mailto:vpsa@qc.cuny.edu">vpsa@qc.cuny.edu</a><br>
+                Phone: 718-997-5500<br><br>
+                
+                <h3>Office of Student Development & Leadership</h3>
+                <a href="https://www.qc.cuny.edu/sdl/" target="_blank">Office of Student Development & Leadership</a><br>
+                Room Number: LL23<br>
+                Email: <a href="mailto:Studentlife@qc.cuny.edu">Studentlife@qc.cuny.edu</a><br>
+                Phone: 718-997-3970<br><br>
+ 
             `);
 
             const markerElement14 = document.createElement('div');
@@ -236,9 +523,26 @@
             //-----
 
             const popupKingsHall = new mapboxgl.Popup({ offset: 25}).setHTML(`
-                <h3> Student Union </h3>
-                <p> No one actually studies on the first floor?</p>
-                <p> f them kids </p>
+                <h1> King Hall </h1>
+                
+                <h3>International Students and Scholars</h3>
+                <a href="https://www.qc.cuny.edu/academics/iss/" target="_blank">International Students and Scholars</a><br>
+                Room Number: 207<br>
+                Email: <a href="mailto:iss@qc.cuny.edu">iss@qc.cuny.edu</a><br>
+                Phone: 718-997-4440<br>
+                
+                <h3>ACE QC</h3>
+                <a href="https://www.qc.cuny.edu/aceqc/ace/" target="_blank">ACE QC</a><br>
+                Room Number: 209<br>
+                Email: <a href="mailto:ACEQC@qc.cuny.edu">ACEQC@qc.cuny.edu</a><br>
+                Phone: N/A<br>
+                
+                <h3>Immigrant Student Support Initiative</h3>
+                <a href="https://www.qc.cuny.edu/immi/" target="_blank">Immigrant Student Support Initiative</a><br>
+                Room Number: 213<br>
+                Email: <a href="mailto:ImmigrantSupport@qc.cuny.edu">ImmigrantSupport@qc.cuny.edu</a><br>
+                Phone: 718-997-3990<br>
+ 
             `);
 
             const markerElement15 = document.createElement('div');
